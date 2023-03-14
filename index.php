@@ -29,52 +29,29 @@
 
     <?php
 
-        spl_autoload_register(function ($class_name) {
-            include $class_name . ".php"; // COMMENT
+        spl_autoload_register(function ($class_name) {           // !! PERMET DE CHARGER TOUTE LES CLASSES DU FICHIER RACINE !!
+            include $class_name . ".php";
         });
 
-        $stephenking = new Author("Stephen", "King");
+        $stephenking = new Author("Stephen", "King");                     // J'instancie un nouvel auteur ayant comme firstname "Stephen" et comme lastname "King"
 
-        $ca = new Book("Ca", 1138, 1986, 20.00, $stephenking);
-        $simetierre = new Book("Simetierre", 374, 1983, 15.00, $stephenking);
-        $lefleau = new Book("Le Fléau", 823, 1978, 14.00, $stephenking);
+        $ca = new Book("Ca", 1138, 1986, 20.00, $stephenking);                  // J'instancie mes livres, avec comme auteur le __toString de l'auteur respectif
+        $simetierre = new Book("Simetierre", 374, 1983, 15.00, $stephenking);   // (ces livres sont instanciés dans la classe Book qui est fille de la classe
+        $lefleau = new Book("Le Fléau", 823, 1978, 14.00, $stephenking);        // Author, grâce au 'enfant' extends 'parent' )
         $shining = new Book("Shining", 447, 1977, 16.00, $stephenking);
 
-        $jkrowling = new Author("J.K", "Rowling");
+        $jkrowling = new Author("J.K", "Rowling");                                          // J'instancie un nouvel auteur ayant comme firstname "J.K" et comme lastname "Rowling"
 
-        $hp1 = new Book("Harry Potter 1", 595, 1997, 20.99, $jkrowling);
-        $hp2 = new Book("Harry Potter 2", 674, 1998, 21.49, $jkrowling);
-        $hp3 = new Book("Harry Potter 3", 522, 1999, 22.95, $jkrowling);
-        $hp3 = new Book("Harry Potter 4", 568, 2000, 250.45, $jkrowling);
+        $hp1 = new Book("Harry Potter à l'école des sorciers", 305, 1997, 9.30, $jkrowling);        // J'instancie mes livres, avec comme auteur le __toString de l'auteur respectif
+        $hp2 = new Book("Harry Potter et la chambre des secrets", 364, 1998, 9.30, $jkrowling);     // (ces livres sont instanciés dans la classe Book qui est fille de la classe
+        $hp3 = new Book("Harry Potter et le Prisonnier d'Azkaban", 474, 1999, 10.80, $jkrowling);   // Author, grâce au 'enfant' extends 'parent' )
+        $hp3 = new Book("Harry Potter et la Coupe de feu", 656, 2000, 14.90, $jkrowling);
 
-        $charlyducournau = new Author("Charly", "Ducournau");
+        echo $stephenking->afficherBibliographie(); // J'appelle la méthode afficherBibliographie de l'objet $stephenking de la classe Author
+        echo $jkrowling->afficherBibliographie();       
+        
+        echo "Méthodes '__toString' : <br><br>" . $stephenking . " " . $jkrowling . " " . $ca. " ";
 
-        $charlyvre = new Book("Comment rester bloquer sur un exercice 1 semaine durant", 25, 2023, 0.50, $charlyducournau);
-        $charlyvre2 = new Book("Comment commenter son code après avoir réussi car on a pas compris grand chose", 5, 2023, 0.25, $charlyducournau);
-        $charlyvre3 = new Book("Merci ChatGPT", 1, 2023, 0.12, $charlyducournau);
-
-        echo $stephenking->afficherBibliographie();
-        echo $jkrowling->afficherBibliographie();
-        echo $charlyducournau->afficherBibliographie();
-
-
-        echo $ca->setTitle("ca2") . "<br>";
-        echo $ca->setnbPages(729) . "<br>";
-        echo $ca->setParutionYear(9999) . "<br>";
-        echo $ca->setPrice(20000) . "<br>";
-        echo $ca->setAuthor($charlyducournau) . "<br>";
-
-
-        echo $ca->getTitle() . "<br>";
-        echo $ca->getnbPages() . "<br>";
-        echo $ca->getParutionYear() . "<br>";
-        echo $ca->getPrice() . "<br>";
-        echo $ca->getAuthor() . "<br>";
-
-        // Pour créer un livre, je dois $ca = new Book("...","..." etc) ou 
-        // appeler une fonction pour créer un livre à partir de la classe
-        // Author ? 
-    
     ?>
 
 </body>

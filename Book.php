@@ -7,7 +7,7 @@
         private int $_nbPages;
         private int $_parutionYear;
         private float $_price;
-        private Author $_author;
+        private Author $_author; // La propriété $author, sera hydratée à partir de la classe parente Author
 
         public function __construct(string $title, int $nbPages, int $parutionYear, float $price, Author $author)
         {
@@ -16,7 +16,7 @@
             $this->_parutionYear = $parutionYear;
             $this->_price = $price;
             $this->_author = $author;
-            $author->addBook($this);
+            $author->addBook($this); // ???
         }
 
                 // ******************************* MÉTHODES ****************************************************************                
