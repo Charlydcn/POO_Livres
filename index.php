@@ -22,6 +22,7 @@
     h3 {
         font-size:1em;
     }
+
 </style>
 <body>
 
@@ -33,11 +34,11 @@
             include $class_name . ".php";
         });
 
-        $stephenking = new Author("Stephen", "King");                     // J'instancie un nouvel auteur ayant comme firstname "Stephen" et comme lastname "King"
+        $stephenking = new Author("Stephen", "King");                     // J'instancie un nouvel auteur dans la classe Author ayant comme firstname "Stephen" et comme lastname "King"
 
-        $ca = new Book("Ca", 1138, 1986, 20.00, $stephenking);                  // J'instancie mes livres, avec comme auteur le __toString de l'auteur respectif
-        $simetierre = new Book("Simetierre", 374, 1983, 15.00, $stephenking);   // (ces livres sont instanciés dans la classe Book qui est fille de la classe
-        $lefleau = new Book("Le Fléau", 823, 1978, 14.00, $stephenking);        // Author, grâce au 'enfant' extends 'parent' )
+        $ca = new Book("Ca", 1138, 1986, 20.00, $stephenking);                  // J'instancie mes livres, avec l'auteur respectif (nous obtiendrons le __toString l'objet en question de la classe Author)
+        $simetierre = new Book("Simetierre", 374, 1983, 15.00, $stephenking);   // (ces livres sont instanciés dans la classe Book qui est fille de la classe Author, grâce au 'enfant' extends 'parent' )
+        $lefleau = new Book("Le Fléau", 823, 1978, 14.00, $stephenking);
         $shining = new Book("Shining", 447, 1977, 16.00, $stephenking);
 
         $jkrowling = new Author("J.K", "Rowling");                                          // J'instancie un nouvel auteur ayant comme firstname "J.K" et comme lastname "Rowling"

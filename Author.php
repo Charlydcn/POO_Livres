@@ -8,8 +8,8 @@
         private array $_bibliographie = []; // $bibliographie est un tableau vide qu'on hydratera avec la méthode addBook
 
 
-        public function __construct(string $firstname, string $lastname) // Je ne mets pas $bibliographie entre parenthèse car je ne renseigne pas cette variable
-        {                                                                // lorsque j'instancie un nouvel objet appartenant à cette classe
+        public function __construct(string $firstname, string $lastname) // Je ne mets pas $bibliographie entre parenthèse car je ne renseigne pas cette variable lorsque j'instancie 
+        {                                                                // un nouvel objet appartenant à cette classe
             $this->_firstname = $firstname;
             $this->_lastname = $lastname;
             $this->_bibliographie = []; // Lors de l'instanciation d'un objet de cette classe, un tableau $bibliographie vide est créé

@@ -1,13 +1,13 @@
 <?php
 
-    final Class Book extends Author
+    Class Book
     {
         
         private string $_title;
         private int $_nbPages;
         private int $_parutionYear;
         private float $_price;
-        private Author $_author; // La propriété $author, sera hydratée à partir de la classe parente Author
+        private Author $_author;
 
         public function __construct(string $title, int $nbPages, int $parutionYear, float $price, Author $author)
         {
@@ -16,7 +16,7 @@
             $this->_parutionYear = $parutionYear;
             $this->_price = $price;
             $this->_author = $author;
-            $author->addBook($this); // ???
+            $author->addBook($this); // On utilise la méthode addBook de l'objet $author qu'on a renseigné, sur $this, c'est-à-dire l'objet Book qu'on est en train d'instancier
         }
 
                 // ******************************* MÉTHODES ****************************************************************                
