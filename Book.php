@@ -7,7 +7,7 @@
         private int $_nbPages;
         private int $_parutionYear;
         private float $_price;
-        private Author $_author;
+        private Author $_author; // On précise que notre propriété $_author est un objet : ( "Nom de la classe" $_propriété )
 
         public function __construct(string $title, int $nbPages, int $parutionYear, float $price, Author $author)
         {
@@ -16,8 +16,9 @@
             $this->_parutionYear = $parutionYear;
             $this->_price = $price;
             $this->_author = $author;
-            $author->addBook($this); // On utilise la méthode addBook de l'objet $author qu'on a renseigné, sur $this, c'est-à-dire l'objet Book qu'on est en train d'instancier
-        }
+            $author->addBook($this); // On utilise la méthode addBook de l'objet $author qu'on a renseigné, sur $this, c'est-à-dire l'objet Book qu'on est en train d'instancier,
+        }                            // grâce à cette ligne, chaque livre ($this) instancié, hydratera le tableau $bibliographie de la méthode addBook chez l'auteur ($author)
+                                     // de la classe Author
 
                 // ******************************* MÉTHODES ****************************************************************                
                 // ******************************* ACCESSEURS (get) *******************************

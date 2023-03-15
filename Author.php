@@ -44,10 +44,10 @@
 
         // *******************************************************************************
 
-        public function addBook(Book $book) // CHECK
+        public function addBook(Book $book)         // Chaque $book (objet instancié de la classe Book) sera injecté dans le tableau $bibliographie
             {
-                $this->_bibliographie[] = $book; // Chaque $book (objet instancié de la classe Book) sera injecté dans le tableau $bibliographie
-            }                                    // de cette manière, chaque création de livre (instanciation) hydratera la propriété $bibliographie 
+                $this->_bibliographie[] = $book;    // de cette manière, chaque création de livre (instanciation) hydratera la propriété $bibliographie 
+            }                                    
 
         
         public function __toString() // CHECK
